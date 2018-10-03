@@ -4517,7 +4517,7 @@ class LegendConfig(VegaLiteSchema):
         Padding (in pixels) between legend entries in a symbol legend.
     fillColor : string
         Background fill color for the full legend.
-    gradientHeight : float
+    gradientLength : float
         The height of the gradient, in pixels.
     gradientDirection: string
         The default direction (horizontal or vertical) for gradient legends.
@@ -4604,7 +4604,7 @@ class LegendConfig(VegaLiteSchema):
     _rootschema = Root._schema
 
     def __init__(self, cornerRadius=Undefined, entryPadding=Undefined, fillColor=Undefined,
-                 gradientHeight=Undefined, gradientDirection=Undefined, gradientLabelBaseline=Undefined,
+                 gradientLength=Undefined, gradientDirection=Undefined, gradientLabelBaseline=Undefined,
                  gradientLabelLimit=Undefined, gradientLabelOffset=Undefined,
                  gradientStrokeColor=Undefined, gradientStrokeWidth=Undefined, gradientWidth=Undefined,
                  labelAlign=Undefined, labelBaseline=Undefined, labelColor=Undefined,
@@ -4617,7 +4617,7 @@ class LegendConfig(VegaLiteSchema):
                  titleFontSize=Undefined, titleFontWeight=Undefined, titleLimit=Undefined,
                  titlePadding=Undefined, **kwds):
         super(LegendConfig, self).__init__(cornerRadius=cornerRadius, entryPadding=entryPadding,
-                                           fillColor=fillColor, gradientHeight=gradientHeight,
+                                           fillColor=fillColor, gradientLength=gradientLength,
                                            gradientDirection=gradientDirection,
                                            gradientLabelBaseline=gradientLabelBaseline,
                                            gradientLabelLimit=gradientLabelLimit,

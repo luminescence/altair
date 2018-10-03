@@ -4072,8 +4072,8 @@
           "description": "The default direction (horizontal or vertical) for gradient legends.",
           "type": "string"
         },
-        "gradientHeight": {
-          "description": "The height of the gradient, in pixels.",
+        "gradientLength": {
+          "description": "The length of the gradient, in pixels.",
           "minimum": 0,
           "type": "number"
         },
