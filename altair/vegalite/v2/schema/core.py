@@ -4451,6 +4451,10 @@ class Legend(VegaLiteSchema):
         "bottom-right", "none".
 
         **Default value:** ``"right"``
+    direction: string
+        The direction of the legend, one of "vertical" or "horizontal".
+
+        **Default value:** ``"vertical"``
     padding : float
         The padding, in pixels, between the legend and axis.
     tickCount : float
@@ -4491,11 +4495,12 @@ class Legend(VegaLiteSchema):
     _rootschema = Root._schema
 
     def __init__(self, entryPadding=Undefined, format=Undefined, offset=Undefined, orient=Undefined,
-                 padding=Undefined, tickCount=Undefined, title=Undefined, type=Undefined,
-                 values=Undefined, zindex=Undefined, **kwds):
+                 direction=Undefined, padding=Undefined, tickCount=Undefined, title=Undefined,
+                 type=Undefined, values=Undefined, zindex=Undefined, **kwds):
         super(Legend, self).__init__(entryPadding=entryPadding, format=format, offset=offset,
-                                     orient=orient, padding=padding, tickCount=tickCount, title=title,
-                                     type=type, values=values, zindex=zindex, **kwds)
+                                     orient=orient, direction=direction, padding=padding,
+                                     tickCount=tickCount, title=title, type=type, values=values,
+                                     zindex=zindex, **kwds)
 
 
 class LegendConfig(VegaLiteSchema):
@@ -4514,6 +4519,8 @@ class LegendConfig(VegaLiteSchema):
         Background fill color for the full legend.
     gradientHeight : float
         The height of the gradient, in pixels.
+    gradientDirection: string
+        The default direction (horizontal or vertical) for gradient legends.
     gradientLabelBaseline : string
         Text baseline for color ramp gradient labels.
     gradientLabelLimit : float
@@ -4597,7 +4604,7 @@ class LegendConfig(VegaLiteSchema):
     _rootschema = Root._schema
 
     def __init__(self, cornerRadius=Undefined, entryPadding=Undefined, fillColor=Undefined,
-                 gradientHeight=Undefined, gradientLabelBaseline=Undefined,
+                 gradientHeight=Undefined, gradientDirection=Undefined, gradientLabelBaseline=Undefined,
                  gradientLabelLimit=Undefined, gradientLabelOffset=Undefined,
                  gradientStrokeColor=Undefined, gradientStrokeWidth=Undefined, gradientWidth=Undefined,
                  labelAlign=Undefined, labelBaseline=Undefined, labelColor=Undefined,
@@ -4611,6 +4618,7 @@ class LegendConfig(VegaLiteSchema):
                  titlePadding=Undefined, **kwds):
         super(LegendConfig, self).__init__(cornerRadius=cornerRadius, entryPadding=entryPadding,
                                            fillColor=fillColor, gradientHeight=gradientHeight,
+                                           gradientDirection=gradientDirection,
                                            gradientLabelBaseline=gradientLabelBaseline,
                                            gradientLabelLimit=gradientLabelLimit,
                                            gradientLabelOffset=gradientLabelOffset,

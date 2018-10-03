@@ -3989,6 +3989,10 @@
           "$ref": "#/definitions/LegendOrient",
           "description": "The orientation of the legend, which determines how the legend is positioned within the scene. One of \"left\", \"right\", \"top-left\", \"top-right\", \"bottom-left\", \"bottom-right\", \"none\".\n\n__Default value:__ `\"right\"`"
         },
+        "direction": {
+          "description": "The direction of the legend, one of \"vertical\" (default) or \"horizontal\".",
+          "type": "string"
+        },
         "padding": {
           "description": "The padding, in pixels, between the legend and axis.",
           "type": "number"
@@ -4062,6 +4066,10 @@
         },
         "fillColor": {
           "description": "Background fill color for the full legend.",
+          "type": "string"
+        },
+        "gradientDirection": {
+          "description": "The default direction (horizontal or vertical) for gradient legends.",
           "type": "string"
         },
         "gradientHeight": {
